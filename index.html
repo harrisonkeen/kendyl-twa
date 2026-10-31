@@ -1,0 +1,938 @@
+<!doctype html>
+<html lang="en" data-tree="off" data-petals="hero" data-clusters="prints" data-gallery="collage"
+  data-bgwork="sky" data-bgphotos="photo" data-bgcredits="plain" data-bgfooter="sky"
+  data-wash="on" data-sparkle="on" data-skyshift="off" data-butterflies="on" data-notes="on" data-palette="blush">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kendyl Twa — Actress</title>
+<meta name="description" content="Kendyl Twa, actress based in Vancouver. Photos and credits.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@1,600&family=Lora:ital,wght@0,400;1,400&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory: #faf5f1;      /* page */
+    --veil: #efe6e1;       /* row rules */
+    --ink: #2a3440;        /* text: slate */
+    --copper: #93533a;     /* links, buttons on light — her hair */
+    --name: #8a472b;       /* hero name */
+    --rose: #c9988a;       /* curved lines and swashes on light */
+    --champagne: #e2c3ae;  /* lines and headings on dusk */
+    --sky: #c9d8e2;        /* hero backdrop, sampled from the headshot */
+    --dusk: #27323e;       /* photos band, footer */
+    --mist: #eef0f1;       /* text on dusk */
+    --gutter: clamp(16px, 5vw, 72px);
+    --text: "Lora", Georgia, serif;
+    --display: "Cormorant Garamond", Garamond, serif;
+    --name-font: "Pinyon Script";
+    --name-scale: 1.12;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html.at-end { background: var(--dusk); }   /* past the footer (bounce, toolbar strip) shows the footer colour */
+  body {
+    margin: 0;
+    background: var(--ivory);
+    color: var(--ink);
+    font: 400 1.0625rem/1.7 var(--text);
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: var(--copper); text-decoration-thickness: 1px; text-underline-offset: 0.25em; }
+  a:hover { color: var(--ink); }
+  :focus-visible { outline: 1px solid var(--copper); outline-offset: 4px; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 600; font-style: italic; margin: 0; line-height: 1.05; }
+  h2 { font-size: clamp(2.4rem, 4.6vw, 3.6rem); }
+
+  .section { position: relative; padding: clamp(72px, 10vw, 128px) var(--gutter); max-width: 1240px; margin: 0 auto; }
+  .flow { position: absolute; pointer-events: none; color: var(--rose); }
+
+  .sec-head { margin-bottom: clamp(36px, 5vw, 60px); text-align: center; }
+  .swash { width: 120px; height: 16px; color: var(--rose); display: block; margin: 18px auto 0; }
+
+  /* ---------- nav ---------- */
+  .nav {
+    position: absolute; inset: 0 0 auto; z-index: 5;
+    display: flex; justify-content: flex-end; gap: clamp(18px, 3vw, 40px);
+    padding: 28px var(--gutter);
+  }
+  .nav a { color: var(--ink); text-decoration: none; font-size: 0.95rem; }
+  .nav a:hover { color: var(--name); }
+
+  /* ---------- hero: her headshot on its own powder-blue backdrop ---------- */
+  .hero {
+    position: relative; overflow: hidden;
+    min-height: max(640px, var(--screen, 100svh));
+    background: radial-gradient(ellipse 70% 90% at 70% 40%, #d3e0e8 0%, var(--sky) 60%, #bfd0da 100%);
+    display: grid; align-items: center;
+  }
+  .hero-img {
+    position: absolute; left: 0; top: 0;
+    width: min(58%, 1000px); height: 100%;
+    object-fit: cover; object-position: 40% 18%;
+    -webkit-mask-image: linear-gradient(to right, #000 55%, transparent 98%);
+            mask-image: linear-gradient(to right, #000 55%, transparent 98%);
+  }
+  .hero-copy { position: relative; z-index: 2; width: fit-content; margin-left: 54%; padding-right: var(--gutter); padding-bottom: 40px; }
+  .hero-name {
+    color: var(--name); line-height: 0.95;
+    font-family: var(--name-font), cursive; font-weight: 400; font-style: normal;
+    font-size: calc(clamp(4.8rem, 10.5vw, 10.5rem) * var(--name-scale));
+  }
+  /* Script glyphs overhang their line box (K's top loop, y's tail) and the writing mask cuts everything outside the
+     box, so each word gets padding on every side, taken back with negative margins so the layout doesn't move. */
+  .hero-name span { display: block; padding: 0.4em 0.35em 0.45em 0.2em; margin: -0.4em 0 -0.45em; }
+  .hero-name span + span { padding-left: 1.4em; }
+  /* a pen-stroke flourish that draws itself under the name */
+  .flourish { display: block; width: 88%; height: clamp(26px, 3vw, 40px); margin-top: clamp(-40px, -2.4vw, -16px); color: var(--rose); overflow: visible; }
+  .flourish path { fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; }
+  .hero-edge { position: absolute; left: 0; right: 0; bottom: -1px; z-index: 3; width: 100%; height: clamp(40px, 7vw, 96px); }
+  .hero-edge .fill { fill: var(--ivory); }
+  .hero-edge .line { fill: none; stroke: var(--rose); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+
+  /* petals drifting down through the hero (built by the script) */
+  .petals { position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
+  .petal { position: absolute; top: -40px; width: var(--s); height: var(--s); color: var(--c); opacity: 0; }
+  .petal svg { width: 100%; height: 100%; animation: sway var(--sw) ease-in-out infinite alternate; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-img { animation: fade 2s ease both; }
+    /* the name writes itself: a soft wipe runs left to right across each word, like a pen */
+    .hero-name span {
+      -webkit-mask-image: linear-gradient(90deg, #000 45%, transparent 55%);
+              mask-image: linear-gradient(90deg, #000 45%, transparent 55%);
+      -webkit-mask-size: 230% 100%; mask-size: 230% 100%;
+      -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+      animation: write 1.5s cubic-bezier(.45,.1,.3,1) both;
+    }
+    .hero-name span:nth-child(1) { animation-delay: .5s; }
+    .hero-name span:nth-child(2) { animation-delay: 1.75s; animation-duration: 1s; }
+    .flourish path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.6s 2.5s cubic-bezier(.45,.1,.3,1) forwards; }
+    .nav { animation: fade 1.4s 2.6s ease both; }
+    .petal { animation: fall var(--d) linear var(--delay) infinite; }
+  }
+  @media (prefers-reduced-motion: reduce) { .petals { display: none; } }
+  @keyframes write { from { -webkit-mask-position: 100% 0; mask-position: 100% 0; } to { -webkit-mask-position: 0 0; mask-position: 0 0; } }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes fall {
+    0% { opacity: 0; transform: translate(0, 0) rotate(0deg); }
+    10% { opacity: var(--o); }
+    85% { opacity: var(--o); }
+    100% { opacity: 0; transform: translate(var(--dx), calc(var(--screen, 100svh) + 80px)) rotate(var(--r)); }
+  }
+  @keyframes sway { from { transform: translateX(-14px) rotate(-18deg); } to { transform: translateX(14px) rotate(22deg); } }
+
+  /* ---------- buttons ---------- */
+  .btn {
+    display: inline-block; padding: 13px 30px;
+    border: 1px solid var(--copper); border-radius: 999px;
+    color: var(--copper); text-decoration: none; font-size: 0.95rem;
+    transition: background-color .4s ease, color .4s ease;
+  }
+  .btn:hover { background: var(--copper); color: var(--ivory); }
+
+  /* ---------- featured: her three character reveals ---------- */
+  #work .flow {
+    top: -40px; left: 0; width: 100%; height: 260px; opacity: .35;
+    -webkit-mask-image: radial-gradient(ellipse 340px 90px at 50% calc(100% - 50px), transparent 60%, #000 100%);
+            mask-image: radial-gradient(ellipse 340px 90px at 50% calc(100% - 50px), transparent 60%, #000 100%);
+  }
+  .features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); max-width: 1000px; margin: 0 auto; position: relative; }
+  .feature { margin: 0; }
+  .feature img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 3px; }
+  .feature h3 { font-size: 1.6rem; margin-top: 18px; }
+  .feature p { margin: 6px 0 0; font-size: 0.95rem; }
+  .feature .kind { color: var(--copper); font-style: italic; margin-top: 2px; }
+
+  /* ---------- photos: dusk band (stands in the slot Elegant gives the reel) ---------- */
+  .photos { position: relative; overflow: hidden; background: var(--dusk); color: var(--mist); }
+  .photos .flow { color: var(--champagne); left: 0; bottom: 0; width: 100%; height: 340px; opacity: .22; }
+  .photos .flow.top { top: 0; bottom: auto; height: 200px; transform: scaleY(-1); opacity: .16; }
+  /* the band opens and closes on the same curve as the hero's foot, so the dark section flows in */
+  .band-edge { position: absolute; left: 0; width: 100%; height: clamp(36px, 6vw, 84px); z-index: 1; }
+  .band-edge.top { top: -1px; }
+  .band-edge.bottom { bottom: -1px; transform: scale(-1, -1); }
+  .band-edge path { fill: var(--ivory); }
+  .photos > .section { padding-top: clamp(100px, 13vw, 168px); padding-bottom: clamp(100px, 13vw, 168px); }
+  .photos h2 { color: var(--champagne); }
+  .photos .swash { color: var(--champagne); }
+  .gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(10px, 1.6vw, 20px); position: relative; }
+  .gallery button { all: unset; display: block; cursor: zoom-in; overflow: hidden; border-radius: 3px; }
+  .gallery button:focus-visible { outline: 1px solid var(--champagne); outline-offset: 4px; }
+  .gallery img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 25%; transition: transform 1.2s cubic-bezier(.22,.7,.2,1); }
+  .gallery button:hover img { transform: scale(1.03); }
+
+  .lightbox { border: 0; padding: 0; background: transparent; max-width: 100vw; max-height: 100vh; width: 100vw; height: 100vh; }
+  .lightbox::backdrop { background: rgba(39, 50, 62, 0.95); }
+  .lightbox[open] { display: grid; place-items: center; }
+  .lightbox img { max-width: 92vw; max-height: 88vh; object-fit: contain; }
+  .lightbox-close, .lightbox-step { position: fixed; cursor: pointer; background: none; border: 0; color: var(--mist); font: 2rem/1 var(--display); padding: 12px 16px; }
+  .lightbox-close { top: 16px; right: 16px; }
+  .lightbox-step { top: 50%; transform: translateY(-50%); font-size: 2.6rem; }
+  .lightbox-step.prev { left: 8px; }
+  .lightbox-step.next { right: 8px; }
+
+  /* ---------- credits ---------- */
+  .credits { display: grid; grid-template-columns: repeat(var(--cols, 1), minmax(0, 1fr)); column-gap: clamp(32px, 4vw, 64px); }
+  .credit-col { border-bottom: 1px solid var(--rose); }
+  .credit-col > :last-child, .credit-col > .credit-keep:last-child .credit { border-bottom: 0; }
+  .credit-keep { display: flow-root; }
+  .credit-keep h3 { font-size: 1.6rem; padding: 32px 0 10px; border-bottom: 1px solid var(--rose); }
+  .credit-col > .credit-keep:first-child h3 { padding-top: 0; }
+  .credit { display: grid; grid-template-columns: 1fr auto; column-gap: 24px; padding: 11px 0; border-bottom: 1px solid var(--veil); }
+  .credit-title { font-style: italic; }
+  .credit-role { grid-column: 1; font-size: 0.92rem; color: var(--copper); }
+  .credit-year { grid-column: 2; grid-row: 1; font-size: 0.9rem; opacity: .75; }
+
+  /* ---------- footer ---------- */
+  .footer { position: relative; overflow: hidden; background: var(--dusk); color: var(--mist); }
+  .footer .flow { color: var(--champagne); left: 0; width: 100%; top: 0; height: 300px; opacity: .35;
+    -webkit-mask-image: linear-gradient(to bottom, #000 30%, rgba(0,0,0,.22) 52%);
+            mask-image: linear-gradient(to bottom, #000 30%, rgba(0,0,0,.22) 52%); }
+  .footer a { color: var(--champagne); }
+  .footer a:hover { color: var(--mist); }
+  .footer .section { padding-bottom: 48px; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; align-items: start; }
+  .footer h2 { color: var(--champagne); margin-bottom: 24px; }
+  .footer h3 { font-size: 1.4rem; margin-bottom: 12px; color: var(--champagne); }
+  .footer p { margin: 0; }
+  .footer ul { list-style: none; margin: 0; padding: 0; }
+  .footer li + li { margin-top: 6px; }
+  .footer .email { font-size: clamp(1.1rem, 2vw, 1.45rem); overflow-wrap: anywhere; }
+  .colophon { grid-column: 1 / -1; margin-top: 40px; padding-top: 22px; border-top: 1px solid rgba(226,195,174,.35); font-size: 0.85rem; opacity: .75; }
+
+  /* ---------- phones & tablets ---------- */
+  @media (max-width: 860px) {
+    /* a soft wash of the backdrop colour keeps the links readable over her hair */
+    .nav { justify-content: center; padding-top: 20px; padding-bottom: 36px; background: linear-gradient(to bottom, rgba(214,226,233,.92) 40%, rgba(214,226,233,0)); }
+    .hero { align-items: end; min-height: var(--screen, 100svh); }
+    .hero-img {
+      width: 100%; height: 80%;
+      object-position: 40% 15%;
+      -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+              mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+    }
+    .hero-copy { width: 100%; margin: 0; padding: 0 8px clamp(64px, 16vw, 110px); text-align: center; }
+    .hero-name { font-size: calc(clamp(3rem, 13.5vw, 6.5rem) * var(--name-scale)); }
+    .hero-name span, .hero-name span + span { padding: 0.4em 0.3em 0.45em; }
+    .flourish { width: 70%; margin: -10px auto 0; }
+    .features { grid-template-columns: 1fr; gap: 14px; }
+    .feature { display: grid; grid-template-columns: 112px 1fr; gap: 18px; align-items: center; }
+    .feature img { aspect-ratio: 1; object-position: 50% 30%; }
+    .feature h3 { margin-top: 0; font-size: 1.4rem; }
+    .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .footer .section { grid-template-columns: 1fr; gap: 36px; }
+    .colophon { margin-top: 8px; }
+  }
+  @media (max-width: 380px) { .nav { gap: 14px; } .nav a { font-size: 0.88rem; } }
+
+  /* =================== v3: soft, dreamy, whimsical =================== */
+  html { overflow-x: clip; }
+  body { position: relative; overflow-x: clip; }
+  :root { --band-sky: linear-gradient(180deg, #26304a 0%, #4a4470 50%, #8a6283 100%); --bark: #5a3d44; --note: var(--copper); }
+
+  /* ---------- palettes ---------- */
+  :root[data-palette="blush"] {
+    --ivory: #fcf4f2; --veil: #f2e3e1; --ink: #3b2d35; --copper: #a4544a; --rose: #d9a0aa;
+    --champagne: #5e3c62; --dusk: #dccbe6; --mist: #3b2d40;
+    --band-sky: linear-gradient(180deg, #e6d6f0 0%, #f3d4df 55%, #fbe3d4 100%);
+  }
+  :root[data-palette="twilight"] {
+    --ivory: #f8f3f7; --veil: #ece2ea; --ink: #2f2a3d; --copper: #94506a; --rose: #c99bb6;
+    --champagne: #f2cadb; --dusk: #3a3257; --mist: #f1ecf4;
+    --band-sky: linear-gradient(180deg, #2c2550 0%, #5b4a7d 55%, #a06e8f 100%);
+  }
+  [data-palette="blush"] .colophon { border-top-color: rgba(94,60,98,.25); }
+
+  /* ---------- hero tree ---------- */
+  .tree { position: absolute; top: 0; right: 0; z-index: 2; pointer-events: none; overflow: visible; }
+  .tree.branch { width: min(80vw, 1150px); aspect-ratio: 1000 / 560; }
+  .tree.trunk { height: 100%; aspect-ratio: 1000 / 900; }
+  .tree .br { fill: none; stroke: var(--bark); stroke-linecap: round; }
+  .tree .bl { transform-box: fill-box; transform-origin: center; }
+  [data-tree="branch"] .hero, [data-tree="trunk"] .hero { align-items: end; }
+  [data-tree="branch"] .hero-copy, [data-tree="trunk"] .hero-copy { z-index: 3; padding-bottom: clamp(100px, calc(var(--screen, 100svh) * .15), 170px); }
+  [data-tree="trunk"] .hero-copy { margin-left: 41%; }
+  [data-tree="branch"] .nav a, [data-tree="trunk"] .nav a { text-shadow: 0 0 10px #fff, 0 0 4px #fff, 0 0 2px #fff; }
+  @media (prefers-reduced-motion: no-preference) {
+    .tree .br { stroke-dasharray: 1; animation: grow var(--d) var(--t) cubic-bezier(.35,.1,.45,1) both; }
+    .tree .bl { transform: scale(0); animation: bloom .9s var(--t) cubic-bezier(.3,1.5,.5,1) forwards; }
+  }
+  @keyframes bloom { to { transform: scale(1); } }
+  /* opacity rides along so round line caps don't leave dots before a limb starts drawing */
+  @keyframes grow { 0% { stroke-dashoffset: 1; opacity: 0; } 2% { opacity: 1; } 100% { stroke-dashoffset: 0; opacity: 1; } }
+
+  /* ---------- petals raining down the whole page ---------- */
+  .rain { position: fixed; inset: 0; z-index: 6; pointer-events: none; overflow: hidden; display: none; }
+  [data-petals="tree"] .rain, [data-petals="both"] .rain { display: block; }
+  [data-petals="tree"] .petals, [data-petals="off"] .petals { display: none; }
+  @media (prefers-reduced-motion: reduce) { .rain { display: none !important; } }
+
+  /* ---------- photo clusters ---------- */
+  .cluster { position: absolute; z-index: 4; pointer-events: none; }
+  [data-clusters="off"] .cluster { display: none; }
+  .c1 { left: 0; top: -120px; width: 300px; height: 330px; }
+  .c2 { right: 0; bottom: -190px; width: 320px; height: 290px; }
+  .c3 { left: 0; top: -150px; width: 250px; height: 270px; }
+  .c4 { right: 0; top: -130px; width: 250px; height: 270px; }
+  .c5 { right: 2%; bottom: -150px; width: 330px; height: 280px; }
+  :root:not([data-clusters="off"]) .footer > .section { padding-top: clamp(150px, 15vw, 200px); }
+  .snap { position: absolute; left: var(--x); top: var(--y); width: var(--w); margin: 0; z-index: var(--z, 1);
+    transform: rotate(var(--r)); transition: transform .6s cubic-bezier(.22,.7,.2,1); pointer-events: auto; }
+  .snap:hover { transform: rotate(0deg) scale(1.06); z-index: 6; }
+  .snap img { width: 100%; aspect-ratio: var(--ar, 4 / 5); object-fit: cover; object-position: var(--pos, 50% 30%); }
+  /* A: tilted prints */
+  [data-clusters="prints"] .paper { background: #fffdf9; padding: 7px 7px 24px; box-shadow: 0 12px 28px rgba(60,40,50,.2), 0 2px 6px rgba(60,40,50,.12); }
+  /* B: torn paper with a strip of washi tape */
+  [data-clusters="torn"] .snap { filter: drop-shadow(0 8px 14px rgba(60,40,50,.22)); }
+  [data-clusters="torn"] .paper { background: #fbf6ee; padding: 11px; clip-path: var(--torn); }
+  [data-clusters="torn"] .snap::before { content: ""; position: absolute; z-index: 2; top: -9px; left: 50%; width: 74px; height: 22px;
+    transform: translateX(-50%) rotate(var(--tape, -4deg)); background: rgba(236,186,198,.7);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0 3px, #000 3px calc(100% - 3px), transparent 0); mask-image: linear-gradient(90deg, transparent 0 3px, #000 3px calc(100% - 3px), transparent 0); }
+  /* C: layered, straight, with offset rose frames */
+  [data-clusters="layered"] .snap { transform: none; isolation: isolate; }
+  [data-clusters="layered"] .snap:hover { transform: scale(1.05); }
+  [data-clusters="layered"] .paper { position: relative; }
+  [data-clusters="layered"] .paper::after { content: ""; position: absolute; inset: 0; transform: translate(12px, 12px); border: 1.5px solid var(--rose); z-index: -1; }
+  [data-clusters="layered"] .snap img { box-shadow: 0 10px 26px rgba(60,40,50,.18); }
+
+  /* ---------- gallery as a collage ---------- */
+  [data-gallery="collage"] .gallery { grid-template-columns: repeat(12, minmax(0, 1fr)); grid-auto-rows: clamp(14px, 2.2vw, 30px); gap: 0; padding: 10px 6px 30px; }
+  [data-gallery="collage"] .gallery button { display: flex; overflow: visible; border-radius: 0; background: #fffdf9; padding: 7px 7px 22px;
+    box-shadow: 0 14px 32px rgba(20,15,30,.28); transform: rotate(var(--r)); transition: transform .6s cubic-bezier(.22,.7,.2,1); position: relative; }
+  [data-gallery="collage"] .gallery button:hover { transform: rotate(0deg) scale(1.04); z-index: 5; }
+  [data-gallery="collage"] .gallery button:hover img { transform: none; }
+  [data-gallery="collage"] .gallery img { flex: 1; min-height: 0; height: 100%; aspect-ratio: auto; }
+
+  /* ---------- section backgrounds ---------- */
+  .bg-layer { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+  #work > .bg-layer, #credits > .bg-layer { left: 50%; right: auto; width: 100vw; transform: translateX(-50%); }
+  .sec-head, .features, .credits { position: relative; z-index: 1; }
+  .photos > .section, .footer > .section { z-index: 1; }
+  .bg-layer::before, .bg-layer::after { content: ""; position: absolute; inset: 0; opacity: 0; transition: opacity .6s ease; }
+  .bg-layer:not(.dark)::before { -webkit-mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent); mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent); }
+  .bg-layer.is-photo::before { inset: -30px; background: var(--img) center 35% / cover; filter: blur(5px) saturate(1.05); opacity: .26; }
+  .bg-layer.dark.is-photo::before { opacity: .34; }
+  .bg-layer.is-sky::before { opacity: 1; background:
+      radial-gradient(ellipse 45% 60% at 15% 30%, rgba(250,205,218,.75), transparent 70%),
+      radial-gradient(ellipse 50% 60% at 85% 20%, rgba(205,222,245,.85), transparent 70%),
+      radial-gradient(ellipse 50% 55% at 60% 85%, rgba(228,212,245,.75), transparent 70%),
+      radial-gradient(ellipse 40% 50% at 30% 90%, rgba(255,226,204,.7), transparent 70%); }
+  .bg-layer.is-sky::after { opacity: .95; inset: -10%; background:
+      radial-gradient(closest-side, rgba(255,255,255,.95), transparent) 8% 22% / 380px 110px no-repeat,
+      radial-gradient(closest-side, rgba(255,255,255,.9), transparent) 30% 18% / 260px 80px no-repeat,
+      radial-gradient(closest-side, rgba(255,255,255,.9), transparent) 72% 30% / 420px 120px no-repeat,
+      radial-gradient(closest-side, rgba(255,255,255,.85), transparent) 90% 70% / 300px 90px no-repeat,
+      radial-gradient(closest-side, rgba(255,255,255,.85), transparent) 20% 78% / 340px 100px no-repeat; }
+  .bg-layer.dark.is-sky::before { background: var(--band-sky); }
+  .bg-layer.dark.is-sky::after { inset: 0; opacity: .8; background:
+      radial-gradient(1.6px 1.6px at 12% 18%, #fff, transparent), radial-gradient(1.2px 1.2px at 27% 40%, #fff, transparent),
+      radial-gradient(1.8px 1.8px at 44% 12%, #fff, transparent), radial-gradient(1.2px 1.2px at 63% 33%, #fff, transparent),
+      radial-gradient(1.6px 1.6px at 78% 15%, #fff, transparent), radial-gradient(1.2px 1.2px at 90% 45%, #fff, transparent),
+      radial-gradient(1.4px 1.4px at 8% 60%, #fff, transparent), radial-gradient(1.2px 1.2px at 52% 58%, #fff, transparent),
+      radial-gradient(1.6px 1.6px at 85% 72%, #fff, transparent), radial-gradient(1.2px 1.2px at 35% 80%, #fff, transparent); }
+  @media (prefers-reduced-motion: no-preference) {
+    .bg-layer.is-sky:not(.dark)::after { animation: drift 40s ease-in-out infinite alternate; }
+    .bg-layer.dark.is-sky::after { animation: twinkle 4s ease-in-out infinite alternate; }
+  }
+  @keyframes drift { from { transform: translateX(-4%); } to { transform: translateX(4%); } }
+  @keyframes twinkle { from { opacity: .45; } to { opacity: .9; } }
+
+  /* ---------- watercolour washes bleeding over section edges ---------- */
+  .wash { position: absolute; left: 50%; width: 100vw; height: 300px; transform: translateX(-50%); z-index: 3; pointer-events: none; mix-blend-mode: multiply; opacity: .6; display: none; }
+  .wash.top { top: -150px; }
+  .wash.bottom { bottom: -150px; }
+  [data-wash="on"] .wash { display: block; }
+
+  /* ---------- sparkles ---------- */
+  .spark { position: fixed; z-index: 60; width: var(--s); height: var(--s); margin: calc(var(--s) / -2) 0 0 calc(var(--s) / -2); pointer-events: none; color: var(--c);
+    animation: spark .9s ease-out forwards; }
+  .spark svg { width: 100%; height: 100%; display: block; }
+  @keyframes spark { 0% { transform: translate(0, 0) scale(0) rotate(0); opacity: 1; } 40% { transform: translate(calc(var(--dx) * .4), calc(var(--dy) * .4)) scale(1) rotate(45deg); opacity: 1; }
+    100% { transform: translate(var(--dx), var(--dy)) scale(.2) rotate(120deg); opacity: 0; } }
+
+  /* ---------- butterflies ---------- */
+  .bfly { position: absolute; left: 0; top: 0; z-index: 5; width: var(--s, 34px); height: var(--s, 34px); pointer-events: none; display: none; will-change: transform; }
+  [data-butterflies="on"] .bfly { display: block; }
+  .bfly svg { width: 100%; height: 100%; overflow: visible; }
+  .bfly .wl, .bfly .wr { transform-box: view-box; transform-origin: 0 0; animation: flap var(--f, .26s) ease-in-out infinite alternate; }
+  @keyframes flap { from { transform: scaleX(1); } to { transform: scaleX(.18); } }
+  @media (prefers-reduced-motion: reduce) { .bfly { display: none !important; } }
+
+  /* ---------- handwritten notes ---------- */
+  .note { position: absolute; z-index: 4; font: 600 1.55rem/1.1 "Caveat", cursive; color: var(--note); transform: rotate(var(--r, -4deg)); white-space: nowrap; display: none; pointer-events: none; }
+  [data-notes="on"] .note { display: block; }
+  .note svg { display: block; width: 64px; height: 40px; margin-top: 2px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
+  .photos .note { color: var(--champagne); }
+  .n1 { right: -150px; top: 54%; --r: -6deg; }
+  .n2 { right: 3%; top: clamp(60px, 8vw, 110px); --r: 5deg; }
+  .n3 { left: 5%; top: clamp(150px, 15.5vw, 225px); --r: -5deg; }
+  .n4 { right: 270px; top: 34px; --r: 4deg; }
+  .n5 { left: -110px; top: 30%; --r: -8deg; }
+
+  @media (max-width: 860px) {
+    .tree.branch { width: 74vw; top: -6vw; }
+    .tree.trunk { height: 70%; top: auto; bottom: 0; right: -14vw; }
+    [data-tree="trunk"] .hero-copy, [data-tree="branch"] .hero-copy { margin-left: 0; padding-bottom: clamp(64px, 16vw, 110px); }
+    .cluster { position: relative; inset: auto; margin: 0 auto 28px; width: 270px; height: 260px; }
+    .c2, .c4 { display: none; }
+    .c1 { margin-top: -90px; }
+    .c3 { margin-top: -110px; }
+    /* the last prints straddle the credits/footer border, with less air above and below them */
+    .c5 { margin: 50px auto -230px; }
+    :root:not([data-clusters="off"]) .footer > .section { padding-top: 140px; }
+    /* notes on phones: each sits beside what it's about, its arrow turned towards it */
+    .note { font-size: 1.3rem; }
+    .note svg { flex: none; width: 50px; height: 32px; }
+    [data-notes="on"] .n1, [data-notes="on"] .n5 { display: flex; align-items: center; gap: 0; }
+    [data-notes="on"] .n1 { flex-direction: column-reverse; align-items: flex-start; }
+    .n1 { right: auto; top: auto; left: -48px; bottom: -40px; --r: -6deg; }
+    .n1 svg { margin-left: 34px; transform: rotate(140deg); }
+    .n2, .n4 { position: relative; left: auto; right: auto; top: auto; width: fit-content; margin: 30px 2px 6px auto; text-align: right; }
+    .n2 svg, .n4 svg { margin-left: 12px; }
+    .n3 { left: auto; right: 5%; top: 192px; --r: 4deg; }
+    .n3 svg { margin-left: 30px; }
+    .n4 { margin-top: 18px; }
+    .n5 { left: -48px; top: -46px; --r: -6deg; }
+    .n5 svg { transform: rotate(48deg); }
+    [data-gallery="collage"] .gallery { grid-template-columns: repeat(6, minmax(0, 1fr)); grid-auto-rows: 14px; }
+  }
+
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="flow" viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <g fill="none" stroke="currentColor" stroke-width="1">
+      <path d="M-20 220 C 240 110, 430 300, 720 180 S 1200 50, 1460 140" vector-effect="non-scaling-stroke"/>
+      <path d="M-20 250 C 260 150, 450 320, 745 210 S 1220 90, 1460 170" vector-effect="non-scaling-stroke"/>
+      <path d="M-20 282 C 280 195, 470 330, 770 242 S 1240 135, 1460 202" vector-effect="non-scaling-stroke"/>
+    </g>
+  </symbol>
+  <symbol id="swash" viewBox="0 0 120 16">
+    <path d="M2 8 C 22 0, 38 16, 60 8 S 98 0, 118 8" fill="none" stroke="currentColor" stroke-width="1.2"/>
+  </symbol>
+  <symbol id="petal" viewBox="0 0 20 24">
+    <path d="M10 1 C 17 6, 19 15, 10 23 C 1 15, 3 6, 10 1 Z" fill="currentColor"/>
+  </symbol>
+  <!-- a cherry petal: rounded, with the little notch at its tip -->
+  <symbol id="sakura-petal" viewBox="-9 -18 18 20">
+    <path d="M0 1 C -6 -2, -9 -10, -5 -16 C -3 -18, -1 -17, 0 -14.5 C 1 -17, 3 -18, 5 -16 C 9 -10, 6 -2, 0 1 Z" fill="currentColor"/>
+  </symbol>
+  <symbol id="sakura" viewBox="-20 -20 40 40">
+    <g fill="#fbe4ea" stroke="#eab3c1" stroke-width=".6">
+      <path id="sk-p" d="M0 -2 C -6 -5, -8 -12, -4.5 -17 C -2.5 -19, -1 -18, 0 -16 C 1 -18, 2.5 -19, 4.5 -17 C 8 -12, 6 -5, 0 -2 Z"/>
+      <use href="#sk-p" transform="rotate(72)"/><use href="#sk-p" transform="rotate(144)"/><use href="#sk-p" transform="rotate(216)"/><use href="#sk-p" transform="rotate(288)"/>
+    </g>
+    <circle r="3.2" fill="#e58aa0"/>
+    <g fill="#c25f78"><circle cx="0" cy="-5.5" r=".9"/><circle cx="5" cy="-2" r=".9"/><circle cx="3.4" cy="4.4" r=".9"/><circle cx="-3.4" cy="4.4" r=".9"/><circle cx="-5" cy="-2" r=".9"/></g>
+  </symbol>
+  <symbol id="star" viewBox="-10 -10 20 20">
+    <path d="M0 -10 C 1 -2, 2 -1, 10 0 C 2 1, 1 2, 0 10 C -1 2, -2 1, -10 0 C -2 -1, -1 -2, 0 -10 Z" fill="currentColor"/>
+  </symbol>
+  <filter id="wc" x="-30%" y="-30%" width="160%" height="160%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="4"/>
+    <feDisplacementMap in="SourceGraphic" scale="14" xChannelSelector="R" yChannelSelector="G"/>
+    <feGaussianBlur stdDeviation="0.7"/>
+  </filter>
+  <filter id="bark" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" seed="2"/>
+    <feDisplacementMap in="SourceGraphic" scale="3.5" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <filter id="washf" x="-20%" y="-40%" width="140%" height="180%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="4" seed="9"/>
+    <feDisplacementMap in="SourceGraphic" scale="70" xChannelSelector="R" yChannelSelector="G"/>
+    <feGaussianBlur stdDeviation="6"/>
+  </filter>
+</svg>
+<div class="rain" aria-hidden="true"></div>
+
+<nav class="nav" aria-label="Sections">
+  <a href="#work">Work</a>
+  <a href="#photos">Photos</a>
+  <a href="#credits">Credits</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<header class="hero">
+  <img class="hero-img" src="assets/photos/hero.jpg" alt="Headshot of Kendyl Twa in a powder-blue off-shoulder top" width="1200" height="1600" fetchpriority="high">
+  <div class="petals" aria-hidden="true"></div>
+  <svg class="tree" aria-hidden="true"></svg>
+  <div class="hero-copy">
+    <h1 class="hero-name"><span>Kendyl</span><span>Twa</span></h1>
+    <svg class="flourish" viewBox="0 0 400 40" preserveAspectRatio="none" aria-hidden="true">
+      <path pathLength="1" d="M8 26 C 70 10, 130 36, 200 22 S 320 6, 360 18 C 378 24, 386 30, 372 32 C 356 34, 350 20, 392 12"/>
+    </svg>
+  </div>
+  <svg class="hero-edge" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true">
+    <path class="fill" d="M0 70 C 300 20, 620 100, 960 55 S 1340 30, 1440 45 V100 H0 Z"/>
+    <path class="line" d="M0 70 C 300 20, 620 100, 960 55 S 1340 30, 1440 45"/>
+  </svg>
+</header>
+
+<main>
+
+  <section class="section" id="work" aria-labelledby="work-title">
+    <div class="bg-layer" data-for="bgwork" style="--img: url(assets/photos/cherry-blossom.jpg)" aria-hidden="true"></div>
+    <svg class="flow" aria-hidden="true"><use href="#flow"/></svg>
+    <div class="cluster c1" aria-hidden="true">
+      <figure class="snap" style="--x:0%;--y:6%;--w:50%;--r:-7deg"><div class="paper"><img src="assets/photos/expressions.jpg" alt="" loading="lazy"></div></figure>
+      <figure class="snap" style="--x:44%;--y:0%;--w:50%;--r:5deg"><div class="paper"><img src="assets/photos/ice-cream.jpg" alt="" loading="lazy"></div></figure>
+      <figure class="snap" style="--x:20%;--y:40%;--w:54%;--r:-2deg;--z:3;--pos:50% 45%;--tape:3deg"><div class="paper"><img src="assets/photos/cherry-blossom.jpg" alt="" loading="lazy"></div></figure>
+      <p class="note n1">little moments<svg viewBox="0 0 64 40"><path d="M58 22 C 44 12, 26 26, 8 18 M17 12 L7 18 L16 25"/></svg></p>
+    </div>
+    <p class="note n2" aria-hidden="true">all three out in 2026<svg viewBox="0 0 64 40"><path d="M50 4 C 56 16, 48 28, 30 34 M36 26 L28 35 L38 39"/></svg></p>
+    <div class="cluster c2" aria-hidden="true">
+      <figure class="snap" style="--x:0%;--y:10%;--w:48%;--r:-5deg;--pos:50% 60%"><div class="paper"><img src="assets/photos/tulips.jpg" alt="" loading="lazy"></div></figure>
+      <figure class="snap" style="--x:48%;--y:0%;--w:46%;--r:6deg;--tape:5deg"><div class="paper"><img src="assets/photos/violet-curls.jpg" alt="" loading="lazy"></div></figure>
+      <figure class="snap" style="--x:24%;--y:36%;--w:46%;--r:-1deg;--z:3"><div class="paper"><img src="assets/photos/bw-back.jpg" alt="" loading="lazy"></div></figure>
+    </div>
+    <div class="sec-head">
+      <h2 id="work-title">Featured work</h2>
+      <svg class="swash" aria-hidden="true"><use href="#swash"/></svg>
+    </div>
+    <div class="features">
+      <article class="feature">
+        <img src="assets/photos/love-reset-game.jpg" alt="Kendyl as Alison Dylan with her co-star, Love Reset Game" loading="lazy" width="902" height="1200" style="object-position: 50% 30%">
+        <div>
+          <h3>Love Reset Game</h3>
+          <p>Alison Dylan</p>
+          <p class="kind">Series, 2026</p>
+        </div>
+      </article>
+      <article class="feature">
+        <img src="assets/photos/cassie-shade-escape.jpg" alt="Kendyl as Cassie in a crown and ball gown, Shade Escape" loading="lazy" width="900" height="1200" style="object-position: 30% 30%">
+        <div>
+          <h3>Shade Escape</h3>
+          <p>Cassie</p>
+          <p class="kind">TV series, 2026</p>
+        </div>
+      </article>
+      <article class="feature">
+        <img src="assets/photos/gal-pal-camp-massacre.jpg" alt="Poster for Gal Pal Camp Massacre VII" loading="lazy" width="900" height="1200" style="object-position: 50% 45%">
+        <div>
+          <h3>Gal Pal Camp Massacre VII</h3>
+          <p>The Athlete</p>
+          <p class="kind">Short film, 2026</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="photos" id="photos" aria-labelledby="photos-title">
+    <svg class="band-edge top" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 H1440 V45 C 1340 30, 1300 55, 960 55 S 300 20, 0 70 Z"/></svg>
+    <svg class="band-edge bottom" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 H1440 V45 C 1340 30, 1300 55, 960 55 S 300 20, 0 70 Z"/></svg>
+    <div class="bg-layer dark" data-for="bgphotos" style="--img: url(assets/photos/lakeside.jpg)" aria-hidden="true"></div>
+    <svg class="flow top" aria-hidden="true"><use href="#flow"/></svg>
+    <svg class="flow" aria-hidden="true"><use href="#flow"/></svg>
+    <div class="section">
+      <p class="note n3" aria-hidden="true">a few favourites<svg viewBox="0 0 64 40"><path d="M12 2 C 8 14, 14 26, 32 36 M21 35 L33 37 L29 25"/></svg></p>
+      <div class="sec-head">
+        <h2 id="photos-title">Photos</h2>
+        <svg class="swash" aria-hidden="true"><use href="#swash"/></svg>
+      </div>
+      <div class="gallery">
+        <button><img src="assets/photos/headshot-cream.jpg" alt="Smiling headshot in a cream knit" loading="lazy" width="960" height="1200"></button>
+        <button><img src="assets/photos/bw-leather.jpg" alt="Black and white portrait in a leather jacket" loading="lazy" width="900" height="1200"></button>
+        <button><img src="assets/photos/cherry-blossom.jpg" alt="Reading beneath cherry blossom" loading="lazy" width="900" height="1200" style="object-position: 50% 45%"></button>
+        <button><img src="assets/photos/headshot-green.jpg" alt="Headshot in a green top" loading="lazy" width="960" height="1200"></button>
+        <button><img src="assets/photos/soft-pink.jpg" alt="Smiling, with soft curls and a pink blouse" loading="lazy" width="1200" height="799" style="object-position: 54% 30%"></button>
+        <button><img src="assets/photos/vintage-satin.jpg" alt="Vintage portrait in a pink satin robe and hair rollers" loading="lazy" width="1140" height="1200" style="object-position: 50% 40%"></button>
+        <button><img src="assets/photos/headshot-leather.jpg" alt="Headshot in a black leather jacket" loading="lazy" width="900" height="1200"></button>
+        <button><img src="assets/photos/bw-denim.jpg" alt="Black and white portrait in a white tank and denim" loading="lazy" width="960" height="1200"></button>
+        <button><img src="assets/photos/lakeside.jpg" alt="Standing barefoot on a lakeside dock at golden hour" loading="lazy" width="900" height="1200" style="object-position: 50% 40%"></button>
+        <button><img src="assets/photos/lace-and-leather.jpg" alt="Portrait in red lace and leather on black" loading="lazy" width="960" height="1200"></button>
+        <button><img src="assets/photos/bw-studio.jpg" alt="Black and white studio portrait, arms raised" loading="lazy" width="960" height="1200"></button>
+        <button><img src="assets/photos/violet-curls.jpg" alt="Playful portrait with curls on violet" loading="lazy" width="960" height="1200"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="credits" aria-labelledby="credits-title">
+    <div class="bg-layer" data-for="bgcredits" style="--img: url(assets/photos/tulips.jpg)" aria-hidden="true"></div>
+    <div class="cluster c3" aria-hidden="true">
+      <figure class="snap" style="--x:0%;--y:0%;--w:58%;--r:-6deg"><div class="paper"><img src="assets/photos/glasses.jpg" alt="" loading="lazy"></div></figure>
+      <figure class="snap" style="--x:30%;--y:50%;--w:68%;--r:4deg;--z:2;--ar:3/2;--pos:54% 30%;--tape:2deg"><div class="paper"><img src="assets/photos/soft-pink.jpg" alt="" loading="lazy"></div></figure>
+    </div>
+    <div class="cluster c4" aria-hidden="true">
+      <figure class="snap" style="--x:42%;--y:0%;--w:56%;--r:5deg;--pos:50% 40%"><div class="paper"><img src="assets/photos/vintage-satin.jpg" alt="" loading="lazy"></div></figure>
+      <figure class="snap" style="--x:0%;--y:30%;--w:54%;--r:-4deg;--z:2;--pos:50% 40%;--tape:-6deg"><div class="paper"><img src="assets/photos/lakeside.jpg" alt="" loading="lazy"></div></figure>
+    </div>
+    <p class="note n4" aria-hidden="true">24 credits &amp; counting<svg viewBox="0 0 64 40"><path d="M54 4 C 50 20, 36 30, 14 30 M22 23 L13 30 L22 37"/></svg></p>
+    <div class="sec-head">
+      <h2 id="credits-title">Credits</h2>
+      <svg class="swash" aria-hidden="true"><use href="#swash"/></svg>
+    </div>
+    <div class="credits">
+      <div class="credit-keep"><h3>Series</h3><div class="credit"><span class="credit-title">Swipe to Forever</span><span class="credit-role">Chloe</span><span class="credit-year">2026</span></div></div>
+      <div class="credit"><span class="credit-title">Shade Escape</span><span class="credit-role">Cassie</span><span class="credit-year">2026</span></div>
+      <div class="credit"><span class="credit-title">Foul Play with My Brother's Best Friend</span><span class="credit-role">Rebecca</span><span class="credit-year">2026</span></div>
+      <div class="credit"><span class="credit-title">Falling for My Phony Hubby</span><span class="credit-role">Charlotte</span><span class="credit-year">2026</span></div>
+      <div class="credit"><span class="credit-title">Love Reset Game</span><span class="credit-role">Alison Dylan</span><span class="credit-year">2026</span></div>
+      <div class="credit"><span class="credit-title">Weapons! Women! Wild West!</span><span class="credit-role">Lily</span><span class="credit-year">2026</span></div>
+      <div class="credit"><span class="credit-title">Step Aside! The Chairman Is Here</span><span class="credit-role">Cast</span><span class="credit-year">2026</span></div>
+      <div class="credit"><span class="credit-title">Your Loser Husband Is a Big Shot</span><span class="credit-role">Amanda</span><span class="credit-year">2026</span></div>
+      <div class="credit"><span class="credit-title">My Wife Never Knew Who I Was</span><span class="credit-role">Lydia Kingsly</span><span class="credit-year">2026</span></div>
+      <div class="credit"><span class="credit-title">The Billionaire's Fake Wife</span><span class="credit-role">Dr. Jen Connor (Emily Walker)</span><span class="credit-year">2026</span></div>
+      <div class="credit"><span class="credit-title">Heiress's Ballet Revenge</span><span class="credit-role">Roxie</span><span class="credit-year">2025</span></div>
+      <div class="credit"><span class="credit-title">Oops, I Love You</span><span class="credit-role">Wendy</span><span class="credit-year">2025</span></div>
+      <div class="credit"><span class="credit-title">Mafia Boss Owns My Body</span><span class="credit-role">Lily</span><span class="credit-year">2025</span></div>
+      <div class="credit"><span class="credit-title">After I Gave Lost Billionaire Mouth-to-Mouth</span><span class="credit-role">Harper Kingsley</span><span class="credit-year">2025</span></div>
+      <div class="credit"><span class="credit-title">You Called My Mom a Mistress</span><span class="credit-role">Wendy</span><span class="credit-year">2025</span></div>
+      <div class="credit"><span class="credit-title">Be My Heart, Be Your Eye</span><span class="credit-role">Nico</span><span class="credit-year">2025</span></div>
+      <div class="credit"><span class="credit-title">Sleeping Beauty and Three Brothers</span><span class="credit-role">Luna Newsom</span><span class="credit-year">2025</span></div>
+      <div class="credit"><span class="credit-title">Rose's Thorn and Throne</span><span class="credit-role">Ruth / Rose</span><span class="credit-year">2024</span></div>
+      <div class="credit"><span class="credit-title">The Deal with Love</span><span class="credit-role">Katherine Reed</span><span class="credit-year">2024</span></div>
+      <div class="credit-keep"><h3>Film</h3><div class="credit"><span class="credit-title">Make My Dreams Come True</span><span class="credit-role">Emily Wagner</span><span class="credit-year">2024</span></div></div>
+      <div class="credit-keep"><h3>Short film</h3><div class="credit"><span class="credit-title">Invertical</span><span class="credit-role">Genevieve</span><span class="credit-year">2026</span></div></div>
+      <div class="credit"><span class="credit-title">Gal Pal Camp Massacre VII</span><span class="credit-role">The Athlete</span><span class="credit-year">2026</span></div>
+      <div class="credit"><span class="credit-title">Deserters</span><span class="credit-role">Ellie</span><span class="credit-year">2024</span></div>
+      <div class="credit"><span class="credit-title">Missus</span><span class="credit-role">Missus</span><span class="credit-year">2024</span></div>
+    </div>
+    <div class="cluster c5" aria-hidden="true">
+      <figure class="snap" style="--x:0%;--y:12%;--w:44%;--r:-6deg;--pos:50% 40%"><div class="paper"><img src="assets/photos/on-set.jpg" alt="" loading="lazy"></div></figure>
+      <figure class="snap" style="--x:30%;--y:0%;--w:44%;--r:3deg;--z:2;--tape:4deg"><div class="paper"><img src="assets/photos/headshot-green.jpg" alt="" loading="lazy"></div></figure>
+      <figure class="snap" style="--x:56%;--y:18%;--w:42%;--r:7deg;--z:3;--tape:-3deg"><div class="paper"><img src="assets/photos/lace-and-leather.jpg" alt="" loading="lazy"></div></figure>
+      <p class="note n5">on set ♡<svg viewBox="0 0 64 40"><path d="M4 22 C 20 12, 38 28, 56 18 M47 12 L57 18 L48 25"/></svg></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer" id="contact">
+  <div class="bg-layer dark" data-for="bgfooter" style="--img: url(assets/photos/bw-back.jpg)" aria-hidden="true"></div>
+  <svg class="flow" aria-hidden="true"><use href="#flow"/></svg>
+  <div class="section">
+    <div>
+      <h2>Casting &amp; bookings</h2>
+      <p><a class="email" href="mailto:twakendyl026@gmail.com">twakendyl026@gmail.com</a></p>
+    </div>
+    <div>
+      <h3>Representation</h3>
+      <p><a href="https://www.instagram.com/lucastalentinc/" rel="noopener">Lucas Talent</a></p>
+    </div>
+    <div>
+      <h3>Profiles</h3>
+      <ul>
+        <li><a href="https://www.imdb.com/name/nm15697825/" rel="noopener">IMDb</a></li>
+        <li><a href="https://www.instagram.com/kendyltwa/" rel="noopener">Instagram</a></li>
+        <li><a href="https://linktr.ee/twakendyl" rel="noopener">Linktree</a></li>
+      </ul>
+    </div>
+    <p class="colophon">© 2026 Kendyl Twa</p>
+  </div>
+</footer>
+
+<dialog class="lightbox" aria-label="Photo viewer">
+  <img alt="">
+  <button class="lightbox-step prev" aria-label="Previous photo">‹</button>
+  <button class="lightbox-step next" aria-label="Next photo">›</button>
+  <button class="lightbox-close" aria-label="Close">×</button>
+</dialog>
+
+
+<script>
+  addEventListener('scroll', () => document.documentElement.classList.toggle('at-end', scrollY > document.documentElement.scrollHeight / 2), { passive: true });
+</script>
+<script>
+  // Phones: pin viewport-sized things (the hero) to the first screen height, in px. In-app browsers (Instagram etc.)
+  // resize the whole viewport, svh included, as their toolbar slides away on scroll, and the hero grew mid-scroll.
+  // Only a width change (rotation) re-measures. Desktop keeps plain svh.
+  (() => { if (!matchMedia('(pointer: coarse)').matches) return;
+    const r = document.documentElement; let w = 0;
+    const pin = () => { if (innerWidth === w) return; w = innerWidth; r.style.setProperty('--screen', innerHeight + 'px'); };
+    pin(); addEventListener('resize', pin); })();
+</script>
+<script>
+  // Petals: a few soft blush and powder-blue petals drift down through the hero
+  const petals = document.querySelector('.petals');
+  const tints = ['#efc9c3', '#f3dcd6', '#e3b3aa', '#f7ebe6', '#dfe9ef'];
+  for (let i = 0; i < 16; i++) {
+    const p = document.createElement('span');
+    p.className = 'petal';
+    const r = (a, b) => a + Math.random() * (b - a);
+    p.style.cssText = `left:${r(-5, 100)}%;--s:${r(10, 20)}px;--c:${tints[i % tints.length]};--o:${r(.55, .9)};` +
+      `--d:${r(11, 19)}s;--delay:${r(-4, 9)}s;--dx:${r(-120, 120)}px;--r:${r(-260, 260)}deg;--sw:${r(2.2, 3.6)}s`;
+    p.innerHTML = '<svg><use href="#petal"/></svg>';
+    petals.append(p);
+  }
+
+  // Gallery lightbox
+  const shots = [...document.querySelectorAll('.gallery img')];
+  const box = document.querySelector('.lightbox');
+  const big = box.querySelector('img');
+  let at = 0;
+  const show = i => { at = (i + shots.length) % shots.length; big.src = shots[at].src; big.alt = shots[at].alt; };
+  shots.forEach((img, i) => img.parentElement.addEventListener('click', () => { show(i); box.showModal(); }));
+  box.querySelector('.prev').addEventListener('click', () => show(at - 1));
+  box.querySelector('.next').addEventListener('click', () => show(at + 1));
+  box.querySelector('.lightbox-close').addEventListener('click', () => box.close());
+  box.addEventListener('click', e => { if (e.target === box) box.close(); });
+  box.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') show(at - 1);
+    if (e.key === 'ArrowRight') show(at + 1);
+  });
+
+  // Credits: split into columns of near-equal height so every column ends on the same line;
+  // a column may break mid-category, but breaking between categories is cheaper.
+  const credits = document.querySelector('.credits');
+  const groups = [];
+  [...credits.children].forEach(row => {
+    if (row.classList.contains('credit-keep')) groups.push({ title: row.querySelector('h3').textContent, items: [] });
+    groups.at(-1).items.push(row.classList.contains('credit') ? row : row.querySelector('.credit'));
+  });
+  const el = (tag, className, ...kids) => { const e = document.createElement(tag); e.className = className; e.append(...kids); return e; };
+  function layoutCredits() {
+    const n = innerWidth > 1100 ? 3 : innerWidth > 860 ? 2 : 1;
+    const rows = groups.flatMap(g => [el('div', 'credit-keep', el('h3', '', g.title), g.items[0]), ...g.items.slice(1)]);
+    credits.style.setProperty('--cols', n);
+    const cols = Array.from({ length: n }, () => el('div', 'credit-col'));
+    cols[0].append(...rows);
+    credits.replaceChildren(...cols);
+    if (n === 1) return;
+    const h = rows.map(r => r.offsetHeight);
+    const sum = (a, b) => h.slice(a, b).reduce((x, y) => x + y, 0);
+    const penalty = i => rows[i].classList.contains('credit-keep') ? 0 : 40;
+    let best = null;
+    const cuts = n === 2 ? rows.map((_, i) => [i]).slice(1) :
+      rows.flatMap((_, i) => rows.map((_, j) => [i, j])).filter(([i, j]) => i > 0 && j > i);
+    for (const c of cuts) {
+      const edges = [0, ...c, rows.length];
+      const tallest = Math.max(...edges.slice(1).map((e, k) => sum(edges[k], e)));
+      const score = tallest + c.reduce((t, i) => t + penalty(i), 0);
+      if (!best || score < best.score) best = { score, c };
+    }
+    const edges = [0, ...best.c, rows.length];
+    cols.forEach((col, k) => col.replaceChildren(...rows.slice(edges[k], edges[k + 1])));
+  }
+  layoutCredits();
+  let lastCols;
+  addEventListener('resize', () => {
+    const n = innerWidth > 1100 ? 3 : innerWidth > 860 ? 2 : 1;
+    if (n !== lastCols) { lastCols = n; layoutCredits(); }
+  });
+  document.fonts.ready.then(layoutCredits);
+
+  /* =================== v3: soft, dreamy, whimsical =================== */
+  const root = document.documentElement;
+  const NS = 'http://www.w3.org/2000/svg';
+  const mk = (tag, attrs = {}, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.append(e); return e; };
+  const seeded = seed => () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+  const rnd = (a, b) => a + Math.random() * (b - a);
+
+  // ---------- the painted cherry tree: limbs draw themselves, then blossoms burst open along them ----------
+  const PINKS = ['#f7c6d2', '#f3b3c3', '#fad7df', '#ec9db2', '#fde9ee', '#f5bccb'];
+  function buildTree() {
+    const svg = document.querySelector('.tree');
+    svg.replaceChildren();
+    const mode = root.dataset.tree;
+    if (mode === 'off') return;
+    const R = seeded(mode === 'trunk' ? 11 : 7), r = (a, b) => a + R() * (b - a);
+    const H = mode === 'trunk' ? 900 : 560;
+    svg.setAttribute('viewBox', `0 0 1000 ${H}`);
+    svg.setAttribute('preserveAspectRatio', mode === 'trunk' ? 'xMaxYMax meet' : 'xMaxYMin meet');
+    svg.setAttribute('class', 'tree ' + mode);
+    const halos = mk('g', { filter: 'url(#wc)', opacity: .5 }, svg);
+    const wood = mk('g', { filter: 'url(#bark)' }, svg);
+    const bloom = mk('g', { filter: 'url(#wc)' }, svg);
+    const flowers = mk('g', {}, svg);
+    const floor = mode === 'trunk' ? 380 : 250;   // keep the canopy above her name
+
+    function blossom(x, y, size, t) {
+      const halo = mk('g', { class: 'bl', style: `--t:${t}s` }, halos);
+      mk('circle', { cx: x, cy: y, r: size * 1.45, fill: '#f6d3dc' }, halo);
+      const g = mk('g', { class: 'bl', style: `--t:${t}s` }, bloom);
+      const n = 5 + Math.floor(R() * 5);
+      for (let i = 0; i < n; i++) {
+        const a = R() * Math.PI * 2, d = R() * size;
+        mk('circle', { cx: x + Math.cos(a) * d, cy: y + Math.sin(a) * d * .8, r: r(size * .3, size * .55), fill: PINKS[Math.floor(R() * PINKS.length)], opacity: r(.6, .9) }, g);
+      }
+      const f = mk('g', { class: 'bl', style: `--t:${t + .15}s` }, flowers);
+      const k = 1 + Math.floor(R() * 3);
+      for (let i = 0; i < k; i++) {
+        const s = r(14, 24);
+        mk('use', { href: '#sakura', x: x + r(-size, size) * .7 - s / 2, y: y + r(-size, size) * .6 - s / 2, width: s, height: s, transform: `rotate(${r(0, 70)} ${x} ${y})` }, f);
+      }
+    }
+    function limb(x, y, ang, len, w, depth, t) {
+      const a = ang * Math.PI / 180;
+      const nx = x + Math.cos(a) * len, ny = y + Math.sin(a) * len;
+      const bend = r(-.16, .16) * len;
+      const mx = (x + nx) / 2 - Math.sin(a) * bend, my = (y + ny) / 2 + Math.cos(a) * bend;
+      const d = .28 + len / 700;
+      mk('path', { class: 'br', d: `M${x} ${y} Q${mx} ${my} ${nx} ${ny}`, 'stroke-width': w, pathLength: 1, style: `--t:${t}s;--d:${d}s` }, wood);
+      const t2 = t + d * .8;
+      if (depth <= 0 || w < 1.2 || nx < 230 || ny > floor + 40) { blossom(nx, ny, r(20, 34), t2); return; }
+      if (depth <= (mode === 'trunk' ? 5 : 3) && R() < (mode === 'trunk' ? .95 : .7)) blossom(mx, my, mode === 'trunk' ? r(18, 30) : r(12, 22), t2 - .1);
+      // leftward limbs: angles near 180; bigger angle = up-left, smaller = down-left
+      let a2 = ang + r(-15, 15);
+      if (ny > floor && nx < 860) a2 += 22 * Math.sign(Math.cos(a)) * -1;
+      if (ny < 30) a2 -= 18 * Math.sign(Math.cos(a)) * -1;
+      limb(nx, ny, a2, len * r(.72, .86), w * .7, depth - 1, t2);
+      // side shoots lean upward more often than not (up = towards 270°)
+      const up = Math.cos(a) < 0 ? 1 : -1;
+      if (R() < .8) limb(nx, ny, ang + (R() < (ny > floor - 60 ? .9 : .6) ? up : -up) * r(28, 50), len * r(.5, .68), w * .55, depth - 1, t2 + .05);
+    }
+    if (mode === 'branch') {
+      limb(1030, 30, 174, 230, 24, 6, .3);
+      limb(1030, 140, 196, 170, 17, 5, .55);
+      limb(1015, -10, 135, 130, 12, 4, .8);
+    } else {
+      // trunk rises from the bottom-right corner, leans in, then throws its limbs over the top
+      const segs = [[985, 930, 968, 700, 50], [968, 700, 952, 520, 40], [952, 520, 935, 420, 32]];
+      segs.forEach(([x1, y1, x2, y2, w], i) => mk('path', { class: 'br', d: `M${x1} ${y1} Q${(x1 + x2) / 2 + 14} ${(y1 + y2) / 2} ${x2} ${y2}`, 'stroke-width': w, pathLength: 1, style: `--t:${.2 + i * .35}s;--d:.4s` }, wood));
+      limb(935, 420, 214, 170, 22, 7, 1.2);
+      limb(935, 420, 246, 150, 18, 6, 1.35);
+      limb(940, 425, 290, 110, 12, 4, 1.4);
+      limb(955, 600, 305, 90, 10, 2, 1);
+    }
+  }
+
+  // ---------- petals raining down the whole page (a fixed layer, so they keep falling as you scroll) ----------
+  function buildRain() {
+    const rain = document.querySelector('.rain');
+    rain.replaceChildren();
+    const fromTree = root.dataset.tree !== 'off';
+    for (let i = 0; i < 26; i++) {
+      const p = document.createElement('span');
+      p.className = 'petal';
+      const left = fromTree && i % 3 !== 0 ? rnd(35, 100) : rnd(-5, 100);
+      p.style.cssText = `left:${left}%;--s:${rnd(11, 19)}px;--c:${PINKS[i % PINKS.length]};--o:${rnd(.6, .95)};` +
+        `--d:${rnd(10, 18)}s;--delay:${rnd(-12, 6)}s;--dx:${rnd(-260, 60)}px;--r:${rnd(-300, 300)}deg;--sw:${rnd(1.8, 3.4)}s`;
+      p.innerHTML = '<svg><use href="#sakura-petal"/></svg>';
+      rain.append(p);
+    }
+  }
+
+  // ---------- torn-paper edges, unique per photo ----------
+  document.querySelectorAll('.cluster .paper').forEach(paper => {
+    const pts = [], j = () => rnd(0, 2.6);
+    for (let i = 0; i <= 20; i++) pts.push(`${i * 5}% ${j()}%`);
+    for (let i = 1; i <= 20; i++) pts.push(`${100 - j()}% ${i * 5}%`);
+    for (let i = 19; i >= 0; i--) pts.push(`${i * 5}% ${100 - j()}%`);
+    for (let i = 19; i >= 1; i--) pts.push(`${j()}% ${i * 5}%`);
+    paper.style.setProperty('--torn', `polygon(${pts.join(',')})`);
+  });
+
+  // ---------- gallery collage ----------
+  const gallery = document.querySelector('.gallery');
+  const COLLAGE = [[1,2,4,11,-3],[4,1,3,10,3],[7,3,3,10,-2],[9,1,4,11,4],[1,12,4,7,2],[5,11,3,10,-4],
+                   [8,12,3,10,2],[10,11,3,10,-3],[2,19,3,11,3],[4,21,3,10,-2],[7,22,3,10,4],[10,21,3,10,-3]];
+  function layoutGallery() {
+    [...gallery.children].forEach((b, i) => {
+      if (root.dataset.gallery !== 'collage') { b.style.gridArea = ''; return; }
+      let [c, rw, w, h, tilt] = COLLAGE[i];
+      if (innerWidth <= 860) { c = i % 2 ? 4 : 1; rw = 1 + Math.floor(i / 2) * 13 + (i % 2 ? 4 : 0); w = 3; h = 15; tilt = i % 2 ? 3 : -3; }
+      b.style.gridArea = `${rw} / ${c} / span ${h} / span ${w}`;
+      b.style.setProperty('--r', tilt + 'deg');
+    });
+  }
+  addEventListener('resize', layoutGallery);
+
+  // ---------- section backgrounds ----------
+  function applyBackgrounds() {
+    document.querySelectorAll('.bg-layer').forEach(l => {
+      l.classList.remove('is-photo', 'is-sky');
+      const v = root.dataset[l.dataset.for];
+      if (v !== 'plain') l.classList.add('is-' + v);
+    });
+  }
+
+  // ---------- watercolour washes over the seams ----------
+  const WASH = ['#f3c4cf', '#e0cdef', '#fbd9c4', '#cfe0ef', '#f6d0dc'];
+  [['#work', 'top'], ['#work', 'bottom'], ['#credits', 'top'], ['#credits', 'bottom']].forEach(([sel, where], k) => {
+    const svg = mk('svg', { class: 'wash ' + where, viewBox: '0 0 1440 300', preserveAspectRatio: 'none', 'aria-hidden': 'true' });
+    const g = mk('g', { filter: 'url(#washf)' }, svg);
+    const R = seeded(20 + k), r = (a, b) => a + R() * (b - a);
+    for (let i = 0; i < 6; i++) mk('ellipse', { cx: r(0, 1440), cy: r(100, 200), rx: r(140, 300), ry: r(35, 80), fill: WASH[Math.floor(R() * WASH.length)], opacity: r(.45, .8) }, g);
+    document.querySelector(sel).append(svg);
+  });
+
+  // ---------- sparkles on hover ----------
+  let lastSpark = 0;
+  addEventListener('pointermove', e => {
+    if (root.dataset.sparkle !== 'on' || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const t = e.target.closest && e.target.closest('img, a, button, .snap');
+    if (!t || t.closest('.mock')) return;
+    const now = performance.now();
+    if (now - lastSpark < 50) return;
+    lastSpark = now;
+    const s = document.createElement('span');
+    s.className = 'spark';
+    s.style.cssText = `left:${e.clientX + rnd(-10, 10)}px;top:${e.clientY + rnd(-10, 10)}px;--s:${rnd(8, 17)}px;` +
+      `--c:${['#f7d58b', '#f4b6c8', '#ffffff', '#e8c1f0', '#fbe3a8'][Math.floor(rnd(0, 5))]};--dx:${rnd(-24, 24)}px;--dy:${rnd(-34, 6)}px`;
+    s.innerHTML = '<svg><use href="#star"/></svg>';
+    s.addEventListener('animationend', () => s.remove());
+    document.body.append(s);
+  });
+
+  // ---------- butterflies drifting around a few sections ----------
+  const WINGS = [['#f4b6c8', '#c9b6e8'], ['#fbd3b0', '#f4b6c8'], ['#c9dcf2', '#e3c6ef'], ['#f7c6d2', '#fbe3a8']];
+  const flies = ['#work', '#credits', '.footer'].map((sel, i) => {
+    const el = document.createElement('div');
+    el.className = 'bfly';
+    el.setAttribute('aria-hidden', 'true');
+    el.style.setProperty('--s', rnd(26, 38) + 'px');
+    el.style.setProperty('--f', rnd(.18, .3) + 's');
+    const [up, low] = WINGS[i + 1];
+    const wing = `<path d="M0 -1 C 6 -16, 19 -15, 18 -6 C 17 0, 8 1, 0 0 Z" fill="${up}" stroke="#9b6b7d" stroke-width=".6"/>` +
+                 `<path d="M0 1 C 9 2, 15 8, 11 13 C 7 16, 2 10, 0 2 Z" fill="${low}" stroke="#9b6b7d" stroke-width=".6"/>` +
+                 `<circle cx="11" cy="-7" r="2" fill="#fff" opacity=".7"/>`;
+    el.innerHTML = `<svg viewBox="-20 -18 40 36"><g class="wl" style="animation-delay:0s"><g transform="scale(-1 1)">${wing}</g></g>` +
+      `<g class="wr">${wing}</g><path d="M0 -6 C 1 -2, 1 6, 0 10 C -1 6, -1 -2, 0 -6 Z" fill="#5b3e48"/>` +
+      `<path d="M0 -6 C -2 -10, -4 -12, -6 -13 M0 -6 C 2 -10, 4 -12, 6 -13" stroke="#5b3e48" stroke-width=".6" fill="none"/></svg>`;
+    document.body.append(el);
+    return { el, sel, p: rnd(0, 100), box: null, x: 0, y: 0 };
+  });
+  function measureFlies() {
+    flies.forEach(f => { const b = document.querySelector(f.sel).getBoundingClientRect(); f.box = { x: b.left + scrollX, y: b.top + scrollY, w: b.width, h: b.height }; });
+  }
+  function flutter(ms) {
+    if (root.dataset.butterflies === 'on') {
+      const t = ms / 1000;
+      flies.forEach(f => {
+        const { x, y, w, h } = f.box;
+        const nx = x + w * (.5 + .38 * Math.sin(t * .17 + f.p) + .08 * Math.sin(t * .9 + f.p * 3));
+        const ny = y + h * (.5 + .32 * Math.sin(t * .23 + f.p * 2) + .06 * Math.sin(t * 1.3 + f.p));
+        const ang = Math.atan2(ny - f.y, nx - f.x) * 180 / Math.PI + 90;
+        f.x = nx; f.y = ny;
+        f.el.style.transform = `translate(${nx}px, ${ny}px) rotate(${Math.max(-50, Math.min(50, ((ang + 540) % 360) - 180))}deg)`;
+      });
+    }
+    requestAnimationFrame(flutter);
+  }
+  measureFlies();
+  addEventListener('resize', measureFlies);
+  addEventListener('load', measureFlies);
+  setInterval(measureFlies, 3000);
+  requestAnimationFrame(flutter);
+
+  // ---------- skyshift: the page colour drifts through soft pastels as you scroll ----------
+  const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+  let baseIvory;
+  function readBase() { root.style.removeProperty('--ivory'); baseIvory = getComputedStyle(root).getPropertyValue('--ivory').trim(); }
+  function skyShift() {
+    if (root.dataset.skyshift !== 'on') { root.style.removeProperty('--ivory'); return; }
+    const stops = [baseIvory, '#fbe9ee', '#f1ebf8', '#fdf0e4', '#eaf1f8'].map(hex);
+    const p = Math.min(1, Math.max(0, scrollY / Math.max(1, document.documentElement.scrollHeight - innerHeight))) * (stops.length - 1);
+    const i = Math.min(stops.length - 2, Math.floor(p)), f = p - i;
+    const c = stops[i].map((v, k) => Math.round(v + (stops[i + 1][k] - v) * f));
+    root.style.setProperty('--ivory', `rgb(${c.join(',')})`);
+  }
+  addEventListener('scroll', skyShift, { passive: true });
+
+  function playHero() {
+    buildTree();
+    const name = document.querySelector('.hero-name'), fl = document.querySelector('.flourish');
+    name.replaceWith(name.cloneNode(true)); fl.replaceWith(fl.cloneNode(true));
+  }
+  function applyAll() { readBase(); skyShift(); applyBackgrounds(); layoutGallery(); buildRain(); measureFlies(); }
+
+  buildTree();
+  applyAll();
+</script>
+</body>
+</html>
